@@ -1,0 +1,9 @@
+<ul class="pager">
+  {{ if .HasPrev }}
+  <li class="previous"><a href="{{.Prev.URL}}">&larr; Newer</a></li>
+  {{ end }}
+  <li>Page {{.PageNumber}} of {{.TotalPages}}</li>
+  {{ if .HasNext }}
+  <li class="next"><a href="{{.Next.URL}}">Older &rarr;</a></li>
+  {{ end }}
+</ul>

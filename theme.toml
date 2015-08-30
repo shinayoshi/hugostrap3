@@ -1,0 +1,12 @@
+name = "hugostrap3"
+license = "MIT"
+licenselink = "https://github.com/shinayoshi/hugostrap3/blob/master/LICENSE.md"
+description = "Hugo theme based on Bootstrap"
+homepage = "https://github.com/shinayoshi/hugostrap3/"
+tags = ["blog", "bootstrap"]
+features = ["Blog", "Google Analytics", "Disqus", "Syntax Highlight", "Social Links"]
+min_version = 0.13
+
+[author]
+  name = "shinayoshi"
+  homepage = "http://www.shinayoshi.net/"

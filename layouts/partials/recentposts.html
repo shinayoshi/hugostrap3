@@ -1,0 +1,16 @@
+<section class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">Recent Posts</h1>
+  </div>
+  <div id="recent_posts" class="list-group">
+    {{ if .Site.Params.recentLimit }}
+      {{ range first .Site.Params.recentLimit (where .Site.Pages.ByDate.Reverse "Section" "post") }}
+      <a href="{{.Permalink}}" class="list-group-item">{{.Title}} [ {{.Date.Format "2006-01-02"}} ]</a>
+      {{ end }}
+    {{ else }}
+      {{ range first 5 (where .Site.Pages.ByDate.Reverse "Section" "post") }}
+      <a href="{{.Permalink}}" class="list-group-item">{{.Title}} [ {{.Date.Format "2006-01-02"}} ]</a>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>

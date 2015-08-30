@@ -1,0 +1,11 @@
+{{ $baseurl := .Site.BaseURL}}
+<section class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">Categories</h1>
+  </div>
+  <div id="categories" class="list-group">
+    {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+    <a href="{{$baseurl}}/categories/{{ $name | urlize }}" class="list-group-item"><span class="badge">{{len $taxonomy}}</span>{{ $name }}</a>
+    {{ end }}
+  </div>
+</section>

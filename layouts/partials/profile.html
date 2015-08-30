@@ -1,0 +1,13 @@
+{{ $baseurl := .Site.BaseURL}}
+<section class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">Profile</h1>
+  </div>
+  <div id="profile" class="panel-body text-center">
+    <img src="{{$baseurl}}/img/logo.png" alt="logo" class="img-responsive center-block" />
+    <p>
+      <a href="{{$baseurl}}/about/">Author: {{.Site.Params.author}}</a>
+    </p>
+    {{ partial "snslinks.html" . }}
+  </div>
+</section>

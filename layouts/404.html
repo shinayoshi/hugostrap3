@@ -1,0 +1,20 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+{{ $baseurl := .Site.BaseURL}}
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+            <div class="page-content col-md-9">
+              <section>
+                <h1>{{.Title}}</h1>
+                <p>We were unable to find the page you were looking for.</p>
+                <p>Back to the <a href="{{$baseurl}}/">HOME</a>.</p>
+              </section>
+            </div>
+            <div class="sidebar col-md-3">
+              {{ partial "sidebar.html" . }}
+            </div>
+          </div>
+        </div>
+      </div>
+{{ partial "footer.html" . }}

@@ -1,0 +1,26 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+{{ $baseurl := .Site.BaseURL}}
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+            <div class="page-content col-md-9">
+              <article>
+                <div class="title">
+                  <h1>{{.Title}}</h1>
+                  <p>
+                    <span class="label label-primary">{{.Date.Format "Mon Jan 2, 2006"}}</span>
+                  </p>
+                </div>
+                <div class="contents">
+                  {{ .Content }}
+                </div>
+              </article>
+            </div>
+            <div class="sidebar col-md-3">
+              {{ partial "sidebar.html" . }}
+            </div>
+          </div>
+        </div>
+      </div>
+{{ partial "footer.html" . }}

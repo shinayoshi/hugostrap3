@@ -1,0 +1,13 @@
+{{ $baseurl := .Site.BaseURL}}
+<section class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">Tags</h1>
+  </div>
+  <div id="tags" class="panel-body">
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+    {{ if $name }}
+    <a href="{{$baseurl}}/tags/{{ $name | urlize }}" >{{ $name }} ({{ len $taxonomy }})</a>
+    {{ end }}
+    {{ end }}
+  </div>
+</section>

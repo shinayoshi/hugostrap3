@@ -1,0 +1,40 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+{{ $baseurl := .Site.BaseURL}}
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+            <div class="page-content col-md-9">
+              <h1>{{.Title}}</h1>
+              <div class="list-group">
+                {{ range (.Paginate (where .Data.Pages.ByDate.Reverse "Section" "post")).Pages }}
+                <a href="{{.Permalink}}" class="list-group-item">
+                  <h2 class="list-group-item-heading">{{.Title}}</h2>
+                  <p class="list-group-item-text">
+                    <span class="label label-primary">{{.Date.Format "Mon Jan 2, 2006"}}</span> in
+                    {{ range $i, $e :=.Params.categories }}
+                    {{if $i}} , {{end}}
+                    {{ . }}
+                    {{ end }} using tags
+                    {{ range $i, $e :=.Params.tags }}
+                    {{if $i}} , {{end}}
+                    {{ . }}
+                    {{ end }}
+                  </p>
+                  <p class="list-group-item-text">
+                    {{.Summary}}
+                  </p>
+                </a>
+                {{ end }}
+              </div>
+              <div class="pagination">
+                {{ partial "pagination.html" .Paginator }}
+              </div>
+            </div>
+            <div class="sidebar col-md-3">
+              {{ partial "sidebar.html" . }}
+            </div>
+          </div>
+        </div>
+      </div>
+{{ partial "footer.html" . }}

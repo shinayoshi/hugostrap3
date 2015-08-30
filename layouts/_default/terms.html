@@ -1,0 +1,26 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+{{ $baseurl := .Site.BaseURL}}
+{{ $data := .Data}}
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+            <div class="page-content col-md-9">
+              <section>
+                <h1>{{.Title}}</h1>
+                <ul>
+                  {{ range $name, $value := .Data.Terms.ByCount }}
+                  <li>
+                    <a href="{{$baseurl}}/{{$data.Plural}}/{{$value.Name | urlize}}">{{$value.Name}} ({{$value.Count}})</a>
+                  </li>
+                  {{ end }}
+                </ul>
+              </section>
+            </div>
+            <div class="sidebar col-md-3">
+              {{ partial "sidebar.html" . }}
+            </div>
+          </div>
+        </div>
+      </div>
+{{ partial "footer.html" . }}
